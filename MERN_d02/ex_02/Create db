@@ -1,0 +1,10 @@
+Lancer Mongo db: 
+=> mongo 
+
+Une fois mongo lancé, 
+creer une db avec : 
+=> use "mern_pool"
+
+pour afficher les db : 
+=> show dbs
+

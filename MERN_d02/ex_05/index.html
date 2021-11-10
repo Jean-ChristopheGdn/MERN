@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Ex05</title>
+ </head>
+ 
+ <body>
+ <h1>ADD NEW STUDENT</h1>
+ <form method="post" action="/addstudent">
+ <label>Lastname</label><br>
+ <input type="string" name="lastname" placeholder="Enter lastname..." required><br>
+ <label>FirstName</label><br>
+ <input type="string" name="firstname" placeholder="Enter firstname..." required><br>
+ <label>Email</label><br>
+ <input type="string" name="email" placeholder="Enter email..." required ><br>
+ <label>Phone number</label><br>
+ <input type="string" name="phone" placeholder="Enter phone number..." required ><br> 
+ <label>Validated</label><br>
+ <input type="string" name="validated" placeholder="in progress / validated / rejected" required ><br> 
+ <label>Admin</label><br>
+ <input type="bool" name="admin"><br>
+ <input type="submit" value="Save">
+ </form>
+
+ </body>
+</html>

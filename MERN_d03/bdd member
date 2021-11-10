@@ -1,0 +1,37 @@
+db.createCollection("members", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "username", "email", "password", "admin" ],
+         properties: {
+            Username: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            email: {
+                bsonType: "string",
+                pattern : "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$",
+                description: "must be a email and is required"
+            },
+            password: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+
+            admin:     {
+                     bsonType: "bool",
+                     "description": "must be a boolean and is required"
+                  }
+               }
+            }
+         }
+      })
+
+db.members.insert({
+   username: "Alice",
+   email: "Alice@gmail.com",
+   password: "Alice",
+   admin: true 
+})
+
+

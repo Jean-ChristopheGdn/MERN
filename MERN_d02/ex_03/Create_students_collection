@@ -1,0 +1,60 @@
+db.createCollection("students", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: [ "lastname", "firstname", "email", "phone", "validated", "admin" ],
+         properties: {
+            lastname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            firstname: {
+               bsonType: "string",
+               description: "must be a string and is required"
+            },
+            email: {
+                bsonType: "string",
+                pattern : "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$",
+                description: "must be a email and is required"
+            },
+            phone: {
+                bsonType: "string",
+                pattern: "^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$",
+                description: "must be a phone number and is required"
+            },
+            validated: {
+                    enum: [ "in progress", "validated", "rejected"],
+                    description: "can only be one of the enum values and is required"
+                  },
+            admin:     {
+                     bsonType: "bool",
+                     "description": "must be a boolean and is required"
+                  }
+               }
+            }
+         }
+      })
+
+db.students.insert({
+   lastname: "Alice",
+   firstname: "Denice",
+   email: "Alice@gmail.com",
+   phone: "0323381606",
+   validated: "validated",
+   admin: true 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.students.insert({lastName : "Dudule"}, {firstName: "LABITE"}, {email:"Labite.dudule@mongodb.com"}, {phone:"0323381606"}, {validated:"validated"}, {admin:true})

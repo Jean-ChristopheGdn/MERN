@@ -1,0 +1,20 @@
+Pour Installer Mongodb
+- Commencer par mettre à jour la liste des packages avec : 
+=> sudo apt update
+
+- Installer le paquet MongoDb :
+=> sudo apt install mongodb
+
+-Pour vérifier que que la bdd fonctionne : 
+=> sudo systemctl status mongodb
+
+- Pour lancer mongodb
+=> mongodb
+
+
+Pour changer le port :
+
+- Aller dans le fichier de conf MongoDb situé dans /etc/mongodb.conf 
+=> sudo nano /etc/mongodb.conf
+puis modifier la ligne 'port' en remplacant le port par défault 27017 par 27042. 
+=> port = 27042
